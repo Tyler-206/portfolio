@@ -1,0 +1,25 @@
+.icon-menu {
+  float: right;
+  font-size: 200%;
+  display: block;
+}
+
+.navigation {
+  padding: 0.2em;
+}
+
+.navigation ul {
+  display: none;
+  padding: 0;
+  list-style: none;
+  clear: both;
+}
+
+.navigation:hover ul {
+  display: block;
+}
+
+.navigation li {
+  font-size: 2em;
+  padding: .5em .2em;
+}
