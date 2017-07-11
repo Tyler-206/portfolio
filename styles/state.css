@@ -1,0 +1,26 @@
+@media (min-width: 800px) {
+  .icon-menu {
+    display: none;
+  }
+
+  .navigation {
+    clear: both;
+  }
+
+  .navigation ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .navigation:hover ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .navigation ul li {
+    display: inline;
+    /*padding: auto;*/
+  }
+}
