@@ -8,3 +8,5 @@ function Project (name,link, image, description) {
 }
 
 var projectOne = new Project ('Project 1', 'www.w.com','brief description');
+
+projectOne;
