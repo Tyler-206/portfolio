@@ -1,12 +1,18 @@
 'use strict';
 
-function Project (name,link, image, description) {
-  this.name = name;
-  this.link = link;
-  this.description = description;
-  this.image = 'images/' + name + '.jpg';
+var projects = [];
+
+function Project (portfolioDataObj) {
+  this.name = portfolioDataObj.name;
+  this.link = portfolioDataObj.link;
+  this.description = portfolioDataObj.description;
+  this.image = 'images/' + portfolioDataObj.name + '.jpg';
 }
 
-var projectOne = new Project ('Project 1', 'www.w.com','brief description');
+portfolioData.forEach(function(projectObject) {
+  projects.push(new Project(projectObject));
+});
 
-projectOne;
+projects.forEach(function(projects) {
+  $('#projects').append(projects);
+});
