@@ -9,10 +9,20 @@ function Project (portfolioDataObj) {
   this.image = 'images/' + portfolioDataObj.name + '.jpg';
 }
 
-portfolioData.forEach(function(projectObject) {
-  projects.push(new Project(projectObject));
-});
+Project.prototype.toHtml = function() {
+  var $newProject = $('section.project').clone();
 
-projects.forEach(function(projects) {
-  $('#projects').append(projects);
-});
+  $newProject.find('.projectName').html(this.name);
+  $newProject.find('.projectLink').attr('href', this.link);
+  $newProject.find('.projectDescription').html(this.description);
+  $newProject.find('.projectImage').attr(this.image);
+
+
+  portfolioData.forEach(function(){
+    projects.push(new Project())
+  });
+
+  projects.forEach(function(section){
+    $('#projects').append(section.toHtml());
+  });
+}

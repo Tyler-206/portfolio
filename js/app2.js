@@ -3,14 +3,14 @@
 var portfolioData = [
   {
     name:'project 1',
-    link:'www.w1.com',
-    description:'<p>this is my project one</p>'
+    link:'http://www.genericwebsite.com/',
+    description:'<p>this is not my project one</p>'
   },{
     name:'project 2',
-    link:'www.w2.com',
-    description:'<p>this is my project two</p>'
+    link:'http://www.blankwebsite.com/',
+    description:'<p>this is not my project two</p>'
   },{
     name:'project 3',
-    link:'www.w3.com',
-    description:'<p>this is my project three</p>'
+    link:'http://www.theworldsworstwebsiteever.com/',
+    description:'<p>this is not my project three</p>'
   }];
