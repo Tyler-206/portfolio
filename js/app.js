@@ -1,12 +1,28 @@
 'use strict';
 
-function Project (name,link, image, description) {
-  this.name = name;
-  this.link = link;
-  this.description = description;
-  this.image = 'images/' + name + '.jpg';
+var projects = [];
+
+function Project (portfolioDataObj) {
+  this.name = portfolioDataObj.name;
+  this.link = portfolioDataObj.link;
+  this.description = portfolioDataObj.description;
+  this.image = 'images/' + portfolioDataObj.name + '.jpg';
 }
 
-var projectOne = new Project ('Project 1', 'www.w.com','brief description');
+Project.prototype.toHtml = function() {
+  var $newProject = $('section.project').clone();
 
-projectOne;
+  $newProject.find('.projectName').html(this.name);
+  $newProject.find('.projectLink').attr('href', this.link);
+  $newProject.find('.projectDescription').html(this.description);
+  $newProject.find('.projectImage').attr(this.image);
+
+
+  portfolioData.forEach(function(){
+    projects.push(new Project())
+  });
+
+  projects.forEach(function(section){
+    $('#projects').append(section.toHtml());
+  });
+}
