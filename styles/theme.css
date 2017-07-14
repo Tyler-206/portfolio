@@ -4,3 +4,11 @@
   background-size:contain;
   background-position:center;
 }*/
+ul {
+  background-color: black;
+  color: white;
+}
+
+.mainTitle {
+  font-size: 300%;
+}

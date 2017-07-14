@@ -26,7 +26,6 @@ projects.forEach(function(article){
 var articleView = {};
 
 articleView.handleMainNav = function() {
-
   $('.tab').on('click', function () {
     var selection = $(this).attr('data-content');
     $('section.tab-content').hide();
