@@ -12,6 +12,8 @@
     flex-direction: row;
     justify-content: space-around;
     text-align: center;
+    width: 100%;
+    position: relative;
   }
 
   .navigation:hover ul {
@@ -19,6 +21,8 @@
     flex-direction: row;
     justify-content: space-around;
     text-align: center;
+    width: 100%;
+    position: relative;
   }
 
   li.tab {
@@ -31,6 +35,7 @@
   .navigation ul li {
     display: inline;
     /*padding: auto;*/
+    border: none;
   }
 
  .articleLayout {

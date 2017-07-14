@@ -6,7 +6,7 @@
 }
 
 .navigation {
-  padding: 0.2em;
+  /*padding: 0.2em;*/
   text-align: right;
 }
 
@@ -15,20 +15,26 @@
   padding: 0;
   list-style: none;
   clear: both;
+  position: absolute;
+  top: 15px;
+  right: 10px;
 }
 
 .navigation:hover ul {
   display: block;
+  width: 15%;
+  color: white;
+  background-color: black;
 }
 
 .navigation li {
   font-size: 2em;
-  padding: .5em .2em;
+  padding: .2em .2em;
+  border: solid 1px white;
 }
 
 li.tab {
   font-size: 100%;
-  margin-top: none;
 }
 li.tab:hover {
   font-size: 105%;

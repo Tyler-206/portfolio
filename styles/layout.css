@@ -1,5 +1,14 @@
 .mainTitle {
   text-align: center;
+  margin: 1%;
+}
+
+ul {
+  margin: 1%
+}
+
+li .tab {
+  margin: 0px;
 }
 
 footer {
