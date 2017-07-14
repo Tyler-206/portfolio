@@ -8,20 +8,15 @@ function Project (portfolioDataObj) {
   this.description = portfolioDataObj.description;
   this.image = 'images/' + portfolioDataObj.image;
 }
-// <article class='projectArticle'>
-//   <img class="projectImage"></img>
-//   <h1 class="ProjectName"><h1>
-//   <p class="projectLink"></p>
-//   <p class="ProjectDescription"></p>
-// </article>
+
 Project.prototype.toHtml = function() {
   var $newProject = $('article.template').clone();
   $newProject.removeClass('template')
-  $newProject.find('.projectName').text(''+ this.name +'');
+  $newProject.addClass('articleLayout')
   $newProject.find('.projectDescription').html(this.description);
-  $newProject.find('.projectLink').text('here is a link!').attr('href', this.link);
+  $newProject.find('.projectLink').text('Here is a link to click!').attr('href', this.link);
   $newProject.find('.projectImage').attr('src', this.image);
-  console.log(this.image);
+  $newProject.find('.projectName').text(''+ this.name +'');
   return $newProject;
 }
 
@@ -42,8 +37,7 @@ articleView.handleMainNav = function() {
     $('section.tab-content').hide();
     $('section.tab-content[id="' + selection + '"]').fadeIn();
   })
-
-  $('.navigation .tab:first').click(); // Let's now trigger a click on the first .tab element, to set up the page.
+  $('.navigation .tab:first').click();
 };
 
 articleView.handleMainNav();
