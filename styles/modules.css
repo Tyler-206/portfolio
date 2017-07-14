@@ -19,7 +19,7 @@
   right: 10px;
 }
 
-.navigation:hover ul {
+.navigation:click ul {
   display: block;
   width: 15%;
   color: white;
