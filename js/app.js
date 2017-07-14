@@ -10,14 +10,9 @@ function Project (portfolioDataObj) {
 }
 
 Project.prototype.toHtml = function() {
-  var $newProject = $('article.template').clone();
-  $newProject.removeClass('template')
-  $newProject.addClass('articleLayout')
-  $newProject.find('.projectDescription').html(this.description);
-  $newProject.find('.projectLink').text('Here is a link to click!').attr('href', this.link);
-  $newProject.find('.projectImage').attr('src', this.image);
-  $newProject.find('.projectName').text(''+ this.name +'');
-  return $newProject;
+  var source   = $('#entry-template').html();
+  var template = Handlebars.compile(source);
+  return(template(this));
 }
 
 projectData.forEach(function(object){
