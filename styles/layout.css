@@ -17,7 +17,9 @@ footer {
 }
 
 img {
-  width: 250px;
+  max-width: 100%;
+  height: auto;
+  margin: 1%;
 }
 
 .template {
