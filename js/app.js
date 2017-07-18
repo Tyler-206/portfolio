@@ -1,7 +1,5 @@
 'use strict';
 
-var projects = [];
-
 function Project (portfolioDataObj) {
   this.name = portfolioDataObj.name;
   this.link = portfolioDataObj.link;
@@ -9,24 +7,24 @@ function Project (portfolioDataObj) {
   this.image = 'images/' + portfolioDataObj.image;
 }
 
+Project.all = [];
+
 Project.prototype.toHtml = function() {
   var source   = $('#entry-template').html();
   var template = Handlebars.compile(source);
   return(template(this));
 }
 
-projectData.forEach(function(object){
-  projects.push(new Project(object))
-});
-
-projects.forEach(function(article){
-  $('#projects').append(article.toHtml());
-});
-
 var articleView = {};
 
+articleView.init = function() {
+  Project.all.forEach(function(article){
+    $('#projects').append(article.toHtml());
+  });
+};
+
 articleView.handleMainNav = function() {
-  $('.tab').on('click', function () {
+  $('.tab').on('click', function() {
     var selection = $(this).attr('data-content');
     $('section.tab-content').hide();
     $('section.tab-content[id="' + selection + '"]').fadeIn();
@@ -35,3 +33,24 @@ articleView.handleMainNav = function() {
 };
 
 articleView.handleMainNav();
+
+Project.loadAll = function(projectData) {
+  projectData.forEach(function(object){
+    Project.all.push(new Project(object))
+  });
+};
+
+Project.getAll = function() {
+  if(localStorage.projectData){
+    Project.loadAll(JSON.parse(localStorage.projectData));
+    articleView.init();
+  }else{
+    $.getJSON('../data/data.json').then(function (data) {
+      localStorage.setItem('projectData', JSON.stringify(data)) ;
+      Project.loadAll(data);
+      articleView.init();
+    }, function(err) {
+      console.log(err);
+    });
+  }
+}
