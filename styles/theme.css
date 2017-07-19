@@ -1,5 +1,9 @@
+* {
+  background-color: white;
+  color: black;
+}
 
-ul {
+ul,li {
   background-color: black;
   color: white;
 }
