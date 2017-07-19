@@ -1,0 +1,19 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "portfolio assignment for codefellows 301",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tyler-206/portfolio.git"
+  },
+  "author": "Tyler Walser",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tyler-206/portfolio/issues"
+  },
+  "homepage": "https://github.com/Tyler-206/portfolio#readme"
+}
