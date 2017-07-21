@@ -1,4 +1,9 @@
 @media (min-width: 800px) {
+
+  body{
+    overflow-x: hidden;
+  }
+
   .icon-menu {
     display: none;
   }
