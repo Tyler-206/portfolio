@@ -1,5 +1,7 @@
 'use strict';
-
+//TODO;  Use of at least one .map() method.
+ // TODO Use of at least one .reduce() method.
+ // TODO IIFE present on at least one .js file.
 function Project (portfolioDataObj) {
   this.name = portfolioDataObj.name;
   this.link = portfolioDataObj.link;
