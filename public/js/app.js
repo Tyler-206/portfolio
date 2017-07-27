@@ -41,11 +41,7 @@
 
   articleView.handleMainNav();
 
-  Project.loadAll = function(projectData) {
-    projectData.forEach(function(object){
-      Project.all.push(new Project(object))
-    });
-  };
+  Project.loadAll = projectData => {Project.all = projectData.map (object => new Project(object))};
 
   Project.getAll = function() {
     if(localStorage.projectData){
@@ -61,4 +57,5 @@
       });
     }
   }
+  Project.getAll();
 })()
