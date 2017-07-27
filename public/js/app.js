@@ -5,7 +5,9 @@
 //TODO We converted the blog into a SPA by using the page.js library to capture clicks and execute a function to modify the page, rather than reloading content from a server.
 // TODO Give your portfolio the same treatment. Update your main nav so that each clickable item is a link to a different url, that is handled by a function as indicated by page.js.
 // TODO Keep your code organized in a M-V-C structure that isolates data management from presentation layer, from the controller that holds it all together.
-(function(){
+var app = app || {};
+
+(function(module){
 
   function Project (portfolioDataObj) {
     this.name = portfolioDataObj.name;
@@ -28,6 +30,7 @@
     Project.all.forEach(function(article){
       $('#projects').append(article.toHtml());
     });
+    $('#projects .projectStats').text(Project.numProjects() + ' words in his project descriptions, because you needed to know this!');
   };
 
   articleView.handleMainNav = function() {
@@ -42,6 +45,10 @@
   articleView.handleMainNav();
 
   Project.loadAll = projectData => {Project.all = projectData.map (object => new Project(object))};
+
+  Project.numProjects = () => {
+    return Project.all.map(project => project.description.split(' ').length).reduce((accumulator, currentValue) => accumulator + currentValue)
+  };
 
   Project.getAll = function() {
     if(localStorage.projectData){
@@ -58,4 +65,5 @@
     }
   }
   Project.getAll();
-})()
+  module.Project = Project;
+})(app)
