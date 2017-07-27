@@ -1,5 +1,5 @@
 'use strict';
-//TODO;  Use of at least one .map() method.
+//TODO DONE Use of at least one .map() method.
 // TODO Use of at least one .reduce() method.
 // TODO DONE IIFE present on at least one .js file.
 //TODO We converted the blog into a SPA by using the page.js library to capture clicks and execute a function to modify the page, rather than reloading content from a server.
