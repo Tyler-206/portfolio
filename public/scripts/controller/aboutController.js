@@ -9,5 +9,11 @@ var app = app || {};
     $('#about').fadeIn();
   };
 
+  module.gitRepoController = function() {
+    module.getGitRepos(function (gitRepos) {
+      module.displayGitRepos(gitRepos);
+    });
+  }
+
   module.aboutController = aboutController;
 })(app);
