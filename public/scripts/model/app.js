@@ -1,6 +1,5 @@
 'use strict';
 
-// TODO Keep your code organized in a M-V-C structure that isolates data management from presentation layer, from the controller that holds it all together.
 var app = app || {};
 
 (function(module){
@@ -19,15 +18,6 @@ var app = app || {};
     var template = Handlebars.compile(source);
     return(template(this));
   }
-
-  // var projectView = {};
-  //
-  // projectView.init = function() {
-  //   Project.all.forEach(function(project){
-  //     $('#projects').append(project.toHtml());
-  //   });
-  //   $('#projects .projectStats').text(Project.numProjects() + ' words in his project descriptions, because you needed to know this!');
-  // };
 
   Project.loadAll = projectData => {Project.all = projectData.map (object => new Project(object))};
 

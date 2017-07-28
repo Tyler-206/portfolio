@@ -1,3 +1,5 @@
+'use strict';
+
 var app = app || {};
 
 (function(module) {
@@ -10,6 +12,5 @@ var app = app || {};
     $('#projects .projectStats').text(app.Project.numProjects() + ' words in his project descriptions, because you needed to know this!');
   };
 
-  app.Project.getAll();
   module.projectView = projectView;
 })(app);
