@@ -8,6 +8,12 @@ ul,li {
   color: white;
 }
 
+.menu {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
+
 .mainTitle {
   font-size: 300%;
 }
