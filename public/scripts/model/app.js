@@ -1,5 +1,10 @@
 'use strict';
 
+//TODO Place all code within the proper layer of MVC abstraction and encapsulation.
+//TODO Use a proxied, authenticated ajax call to GitHub's API to get data from the API.
+// TODO Keep your portfolio responsive as it displays API data.
+// TODO -- DONE DO NOT publish your GitHub Token to any public repo.
+
 var app = app || {};
 
 (function(module){
