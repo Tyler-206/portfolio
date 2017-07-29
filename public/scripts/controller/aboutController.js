@@ -2,15 +2,13 @@
 var app = app || {};
 
 (function(module) {
-  const aboutController = {};
+  let aboutController = {};
 
-  aboutController.index = () => {
-    module.getGitRepos(function (gitRepos) {
-      module.displayGitRepos(gitRepos);
-    });
-
+  aboutController.index = function(ctx, next) {
     $('section.tab-content').hide();
+    module.displayGitRepos(ctx.repos);
     $('#about').fadeIn();
+    next();
   };
 
   module.aboutController = aboutController;
