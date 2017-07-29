@@ -8,6 +8,11 @@ ul,li {
   color: white;
 }
 
+#repos li {
+  background-color: white;
+  color: black;
+}
+
 .menu {
   background-color: black;
   color: white;
