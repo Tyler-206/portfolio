@@ -5,15 +5,13 @@ var app = app || {};
   const aboutController = {};
 
   aboutController.index = () => {
-    $('section.tab-content').hide();
-    $('#about').fadeIn();
-  };
-
-  module.gitRepoController = function() {
     module.getGitRepos(function (gitRepos) {
       module.displayGitRepos(gitRepos);
     });
-  }
+
+    $('section.tab-content').hide();
+    $('#about').fadeIn();
+  };
 
   module.aboutController = aboutController;
 })(app);

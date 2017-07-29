@@ -5,6 +5,6 @@ var app = app || {};
 (function (module) {
   module.displayGitRepos = function (object) {
     const template = Handlebars.compile($('#gitTemplate').html());
-    $('#about').append(template({gitRepos: object}))
+    $('#repos').append(template({gitRepos: object}))
   }
 })(app);

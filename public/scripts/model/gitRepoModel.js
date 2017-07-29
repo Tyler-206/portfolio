@@ -6,20 +6,18 @@ var app = app || {};
   module.getGitRepos = function (callback) {
 
     $.ajax({
-      url: 'https://api.github.com/user/repos',
-      method: 'GET',
-      headers: {
-        Authorization: `token ${githubToken}`
-      }
+      url: 'github/user/repos'
     })
     .then(
       function (data) {
-        let mappedData = data.map(repo =>({
-          name: repo.name,
-          url: repo.html_url
+        console.log(data);
+        let mappedData = data.map(gitRepo =>({
+          name: gitRepo.name,
+          url: gitRepo.html_url
         }));
         callback(mappedData);
       }
-    );
+    )
+    // .catch(error => console.error(error))
   };
 })(app);
