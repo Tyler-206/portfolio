@@ -3,23 +3,21 @@
 var app = app || {};
 
 (function (module) {
-
-  const gitRepos = {};
-  gitRepos.all = [];
-
-  module.getGitRepos = function (callback) {
-
+  module.getGitRepos = function (ctx, next) {
     $.ajax({
-      url: 'github/user/repos'
+      url: '/github/user/repos',
+      method: 'GET'
     })
     .then(
-      function (res) {
-        gitRepos.all = res;
+      function (data) {
+        let mappedData = data.map(repo =>({
+          name: repo.name,
+          url: repo.html_url
+        }));
+        console.log('test')
+        ctx.repos = mappedData;
+        next();
       }
-    )
-    .then(callback)
-    // .catch(error => console.error(error))
+    );
   };
-
-  module.gitRepos = gitRepos;
 })(app);

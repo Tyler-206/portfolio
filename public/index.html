@@ -21,11 +21,11 @@
             <p>{{{description}}}</p>
       </article>
     </script>
-    <script id="gitTemplate" type="text/x-handlebars-template" >
+    <script type="text/x-handlebars-template" id="gitTemplate">
       {{#each repos}}
         <li>
-          <h3>{{this.name}}</h3>
-          <a href="{{this.html_url}}">{{this.html_url}}</a>
+          <h3><a href="/repos/{{this.name}}">{{this.name}}</a></h3>
+          <a href="{{this.url}}">{{this.url}}</a>
         </li>
       {{/each}}
     </script>

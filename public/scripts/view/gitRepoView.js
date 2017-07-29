@@ -3,8 +3,8 @@
 var app = app || {};
 
 (function (module) {
-  module.displayGitRepos = function (object) {
+  module.displayGitRepos = function (reposFromModel) {
     const template = Handlebars.compile($('#gitTemplate').html());
-    $('#repos').append(template({gitRepos: object}))
+    $('#repos').append(template({repos: reposFromModel}))
   }
 })(app);
